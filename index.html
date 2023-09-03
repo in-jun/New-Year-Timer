@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>새해 밀리초 카운트 다운</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 80px;
+            color: #00ff00;
+            margin-top: 20px;
+        }
+
+        #countdown {
+            font-size: 150px;
+            color: #00ff00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>새해 밀리초 카운트 다운</h1>
+    <div id="countdown"></div>
+
+    <script>
+        function updateCountdown() {
+            const millisecondsLeft = Date.UTC(new Date().getFullYear() + 1, 0, 1) - Date.now();
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.innerHTML = millisecondsLeft;
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1);
+    </script>
+</body>
+
+</html>
